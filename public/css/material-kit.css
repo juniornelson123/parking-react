@@ -18,7 +18,7 @@
 /* SHADOWS */
 /* Shadows (from mdl http://www.getmdl.io/) */
 body {
-  background-color: #CCCCCC;
+  background-color: #EEEEEE;
 }
 body.inverse {
   background: #333333;
@@ -2070,6 +2070,7 @@ legend {
 .navbar.navbar-default .logo-container .brand {
   color: #555555;
 }
+
 .navbar .navbar-link {
   color: inherit;
 }
