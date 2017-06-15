@@ -5,9 +5,7 @@ class MapMarker extends Component{
 	render(){
 		
 		return (
-	      <div key={this.props.num}>
-	      	teste  
-	      </div>
+			<i className="material-icons">place</i>
     	);
 		
 	}

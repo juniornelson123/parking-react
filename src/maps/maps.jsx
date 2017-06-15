@@ -18,25 +18,11 @@ class Maps extends Component {
 	
 	getLocation(){
 
-		if (navigator.geolocation) {
-	      navigator.geolocation.getCurrentPosition(function(position) {
-	        var pos = {
-	          lat: position.coords.latitude,
-	          lng: position.coords.longitude
-	        };
-
-	        self.props.getCurrentLocation(pos)
-	      }, function() {
-	        console.log("erro ao obter dados")
-	      });
-	    } else {
-	      // Browser doesn't support Geolocation
-	        console.log("erro ao obter dados")
-	    }
+		
 	}
 
 	componentDidMount(){
-		this.getLocation()
+		this.props.getCurrentLocation()
 
 	}
 
