@@ -7,6 +7,8 @@ import multi from 'redux-multi'
 import thunk from 'redux-thunk'
 
 import App from './main/app'
+import Messages from './common/msg/messages'
+
 import reducers from './main/reducers'
 
 const store =  applyMiddleware(multi, thunk, promise)(createStore)(reducers)

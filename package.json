@@ -24,6 +24,7 @@
     "google-maps-react": "^1.0.19",
     "jquery": "^3.2.1",
     "react-google-maps": "^6.3.0",
+    "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "style-loader": "^0.18.2",
     "webpack": "^2.6.1",

@@ -1,27 +1,27 @@
 import { toastr } from 'react-redux-toastr'
 import axios from 'axios'
 import consts from '../consts'
-
+import { redirect } from 'react-router-dom';
 
 export function login(values){
-	return submit(values, `${consts.OAPI_URL}/sign_in`)
+	return submit({user: values}, `${consts.API_URL}/sign_in`)
 }
 
 export function signup(values){
-	return submit(values, `${consts.OAPI_URL}/sign_up`)
+	return submit({user: values}, `${consts.API_URL}/sign_up`)
 }
 
 function submit(values, url){
  return dispatch => {
  	axios.post(url, values)
  		.then(resp => {
+ 			
  			dispatch([
  				{type: 'USER_FETCHED', payload: resp.data}
  			])
  		})
  		.catch(e => {
- 			e.response.data.errors.forEach(
- 				error => toastr.error("ERRO", error))
+ 			toastr.error("Usuario ou senha invalidos", e)
  		})
  }
 }
