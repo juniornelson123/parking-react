@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default props => (
 
@@ -16,17 +17,17 @@ export default props => (
 
             <div className="collapse navbar-collapse" id="example-navbar-primary">
                 <ul className="nav navbar-nav navbar-right">
-                    <li className="active">
-                        <a href="#pablo">
-                            <i className="material-icons">explore</i>
+                    <li>
+                        <Link to={`/sign_in`}>
+                           <i className="material-icons">explore</i>
                             Entrar
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#pablo">
+                    	<Link to={`/sign_up`}>
                             <i className="material-icons">account_circle</i>
                             Cadastrar
-                        </a>
+                    	</Link>
                     </li>
                 </ul>
             </div>

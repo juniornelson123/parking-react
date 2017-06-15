@@ -24,17 +24,22 @@ class Landpage extends Component{
  	return(
 		<div className="landing-page">
 			<Header >
-				<div style={{width: '100%', height: '500px',position:'relative'}}>
-  
-					 <GoogleMapReact
-						bootstrapURLKeys={{key: "AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo",  language: ''}}
-						defaultCenter={this.state.center}
-						defaultZoom={this.state.zoom}
+				<div className="wrapper" style={{marginTop: 60}}>
+        		    <div className="header header-filter" style={{backgroundColor: '#fff'}}>
+        
+						<div style={{width: '100%', height: '500px',position:'relative'}}>
+		  
+							 <GoogleMapReact
+								bootstrapURLKeys={{key: "AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo",  language: ''}}
+								defaultCenter={this.state.center}
+								defaultZoom={this.state.zoom}
 
-				      />
+						      />
 
-               		<BoxInfo />	
-		 		</div>  
+		               		<BoxInfo />	
+				 		</div>
+				 	</div>	  
+				 </div>	  
 			</Header>
 			
 			<Footer />
