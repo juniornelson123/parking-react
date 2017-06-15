@@ -2,6 +2,7 @@ import React from 'react'
 
 import Header from '../common/template/header'
 import Content from '../common/template/content'
+import Footer from '../common/template/footer'
 
 export default props => (
 	<div className="landing-page">
@@ -55,6 +56,8 @@ export default props => (
 				</div>	
 			</div>	
 
-			</Content>
+		</Content>
+		
+
 	</div>
 )

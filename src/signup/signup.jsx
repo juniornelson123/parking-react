@@ -2,14 +2,15 @@ import React from 'react'
 
 import Header from '../common/template/header'
 import Content from '../common/template/content'
+import Footer from '../common/template/footer'
 
 export default props => (
 	<div className="signup-page">
 		<Header />
 		<Content>
-		
+
 	    	<div className="section text-center section-landing">
-			<div className="row">
+				<div className="row">
 					<div className="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
 						<div className="card card-signup">
 							<form className="form" method="" action="">
@@ -58,7 +59,7 @@ export default props => (
 					</div>
 				
 				</div>
-				</div>
+			</div>
 		</Content>
 	</div>
 )
