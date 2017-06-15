@@ -9,11 +9,11 @@ import Signin from '../landpage/signin'
 export default props => (
 	<HashRouter>
 		<Switch>
-			<Route path="/dashboard" component={Dashboard} />
 			<Route path="/home" component={Landpage} />
+			<Route path="/dashboard" component={Dashboard} />
 			<Route path="/sign_in" component={Signin} />
 			<Route path="/sign_up" component={Signup} />
-			<Redirect from="*" to="/dashboard" />
+			<Redirect from="*" to="/home" />
 		</Switch>
 	</HashRouter>
 )

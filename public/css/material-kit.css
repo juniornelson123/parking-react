@@ -3581,7 +3581,6 @@ h2.title {
   display: block;
   left: 0;
   top: 0;
-  content: "";
   background-color: rgba(0, 0, 0, 0.4);
 }
 .header-filter .container {
@@ -3650,7 +3649,7 @@ h2.title {
 }
 
 .landing-page .header {
-  height: 100vh;
+  /*height: 100vh;*/
 }
 .landing-page .header .container {
   padding-top: 26vh;
@@ -3717,7 +3716,7 @@ h2.title {
 @media (max-width: 991px) {
   .landing-page .header {
     height: auto;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
   }
   .landing-page .header .container {
     padding-bottom: 70px;
