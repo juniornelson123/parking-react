@@ -1,6 +1,7 @@
-const userKey = "_mymoney_user"
+const userKey = "_estaciona_facil_user"
 const INITIAL_VALUE = {
-	user: {name: 'junior', email: 'junior@gmail.com'},//JSON.parse(localStorage.getItem(userKey)),
+	user: {name: 'junior', email: 'junior@gmail.com'}
+	//user: JSON.parse(localStorage.getItem(userKey)),
 	validToken: false
 }
 

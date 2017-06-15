@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import If from '../common/operator/if'
+
+const value = false
 export default props => (
 
     <nav className="navbar navbar-primary navbar-fixed-top">
@@ -23,12 +26,14 @@ export default props => (
                             Entrar
                         </Link>
                     </li>
-                    <li>
-                    	<Link to={`/sign_up`}>
-                            <i className="material-icons">account_circle</i>
-                            Cadastrar
-                    	</Link>
-                    </li>
+                    <If test={value}>
+                        <li>
+                            <Link to={`/sign_up`}>
+                                <i className="material-icons">account_circle</i>
+                                Cadastrar
+                            </Link>
+                        </li>
+                    </If>
                 </ul>
             </div>
         </div>

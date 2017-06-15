@@ -4,11 +4,11 @@ import consts from '../consts'
 
 
 export function login(values){
-	return submit(values, `${consts.OAPI_URL}/signin`)
+	return submit(values, `${consts.OAPI_URL}/sign_in`)
 }
 
 export function signup(values){
-	return submit(values, `${consts.OAPI_URL}/signup`)
+	return submit(values, `${consts.OAPI_URL}/sign_up`)
 }
 
 function submit(values, url){
