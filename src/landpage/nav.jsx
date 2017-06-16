@@ -7,6 +7,21 @@ import { logout } from '../auth/authActions'
 import If from '../common/operator/if'
 
 class Nav extends Component{
+   constructor(props) {
+     super(props);
+   
+     this.state = {open: false};
+   }
+    open(){
+        if (this.state.open) {
+            $('#example-navbar-primary').removeClass('in')
+            this.setState({...this.state, open: false})
+        }else{
+            this.setState({...this.state, open: true})
+            
+            $('#example-navbar-primary').addClass('in')
+        }
+    }
     render(){
 
         return(
@@ -14,7 +29,7 @@ class Nav extends Component{
             <nav className="navbar navbar-primary navbar-fixed-top">
                 <div className="container">
                     <div className="navbar-header">
-                        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-primary">
+                        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-primary" onClick={() => this.open()}>
                             <span className="sr-only">Toggle navigation</span>
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>

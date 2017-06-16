@@ -14,6 +14,10 @@ module.exports = {
 	},
 
 	plugins:[
+		new webpack.ProvidePlugin({
+			$: 'modules/jquery/dist/jquery.min.js'
+			
+		}),
 		new ExtractTextPlugin('app.css')
 	],
 
@@ -21,7 +25,7 @@ module.exports = {
 		extensions: [" ", ".js", ".jsx"],
 		alias: {			
 			modules: __dirname+'/node_modules',
-			jquery: 'modules/jquery/dist/jquery/jquery.min.js',
+			jquery: 'modules/jquery/dist/jquery.min.js',
 			bootstrap: 'modules/bootstrap/dist/js/bootstrap.js',
 			material: './public/js/material.min.js',
 			dashboard: './public/js/material-dashboard.js',
