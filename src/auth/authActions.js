@@ -17,7 +17,7 @@ function submit(values, url){
  		.then(resp => {
  			console.log(resp)	
  			dispatch([
- 				{type: 'USER_FETCHED', payload: resp.data}
+ 				{type: 'USER_FETCHED', payload: {user: resp.data, parking: resp.data.parking}}
  			])
  		})
  		.catch(e => {

@@ -19,7 +19,7 @@ class Landpage extends Component{
 	constructor(props) {
 	  super(props);
 	  console.log(
-		this.props.history
+		this.props.parking
 	  )
 	  this.state =  {center: {lat: 59.95, lng: 30.33}, zoom: 11};	
 	}
@@ -41,5 +41,5 @@ class Landpage extends Component{
 	}
 }
 
-const mapStateToProps = state => ({  })
-export default Landpage
+const mapStateToProps = state => ({ parking: state.parking })
+export default connect(mapStateToProps)(Landpage)

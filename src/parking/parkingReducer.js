@@ -1,4 +1,6 @@
-const INITIAL_VALUE = { list: [] , parking: {}, cities: [], states: [], image: ''}
+const parkingKey = "_estaciona_facil_parking"
+
+const INITIAL_VALUE = { list: [] , parking: JSON.parse(localStorage.getItem(parkingKey)), cities: [], states: [], image: ''}
 
 export default (state = INITIAL_VALUE, action ) => {
 	switch(action.type){
