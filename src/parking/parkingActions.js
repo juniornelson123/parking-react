@@ -20,25 +20,29 @@ export function getParkings(){
 }
 
 export function saveParking(values){
-
+	var image = localStorage.getItem('imageParking')
+	console.log(image)
 	const userKey = "_estaciona_facil_user"
 	const user = JSON.parse(localStorage.getItem(userKey))
 	console.log(user)
-	var parking = {name: values.name, description: values.description, user_id: user.id, images: values.image}
+	var parking = {name: values.name, description: values.description, user_id: user.id}
+	var images = {image: image}
 	var address = {cep: values.cep, city_id: values.city, complement: values.complement,
 				number: values.number, district: values.district, address: values.address}
 	
 	return dispatch => {
-		axios.post(`${consts.API_URL}/parkings`, {parking: parking, address: address}, {headers: {'access-token': user.token}})
+		axios.post(`${consts.API_URL}/parkings`, {parking: parking, address: address, images: images}, {headers: {'access-token': user.token}})
 			.then(resp => {
-				dispatch([
-
 					toastr.success("Cadastro efetuado com sucesso"),
-					push('/#/dashboard')])
+				dispatch([
+					push('/#/dashboard')
+
+				])
 			})
 			.catch(erros => {
 				console.log(erros)
 				toastr.error("Erro ao efetuar cadastro")
+					
 			})
 	}
 }

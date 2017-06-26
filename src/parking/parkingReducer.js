@@ -1,4 +1,4 @@
-const INITIAL_VALUE = { list: [] , parking: {}, cities: [], states: []}
+const INITIAL_VALUE = { list: [] , parking: {}, cities: [], states: [], image: ''}
 
 export default (state = INITIAL_VALUE, action ) => {
 	switch(action.type){

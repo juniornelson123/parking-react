@@ -19,13 +19,20 @@ class NewParkingForm extends Component{
 
 	  this.state = {image: '', file: ''};
 	  this.props.getStates()
-
+	  self = this
 
 	}
 
 	onImageDrop(file){
-		console.log(file)
-		this.setState({...this.state,image: file[0].preview, file: file[0]})
+		var reader = new FileReader();
+	   reader.readAsDataURL(file[0]);
+	   reader.onload = function () {
+	    var fileE = reader.result
+		localStorage.setItem('imageParking', fileE)
+		self.setState({...this.state,image: file[0].preview, file: reader.result})
+	   };
+
+
 	}
 	render(){
 		const states = this.props.states || []
@@ -71,7 +78,6 @@ class NewParkingForm extends Component{
 							<div className="row">	
 								<Field name="complement" component={registerInput} label="Complemento" cols="col-md-8" type="text" placeholder="" readOnly={readOnly}/>
 								<Field name="number" component={registerInput} label="Numero" cols="col-md-4" type="text" placeholder="" readOnly={readOnly}/>
-								<Field name="image" component={registerInput} type="hidden" value={this.state.file} placeholder="" readOnly={readOnly}/>
 							</div>
 							<div className="row">	
 								<Field name="state" change={this.props.getCities} component={selectInput} label="Estado" cols="col-md-6" type="text" placeholder="" readOnly={readOnly}>
