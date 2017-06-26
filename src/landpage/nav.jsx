@@ -91,18 +91,18 @@ class Nav extends Component{
                             </If>
                             <If test={this.props.user.user}>
                                 <li className="dropdown" id="menu-sub">
-                                    <If test={this.state.parking}>
+                                    <If test={this.props.parking}>
                                             <a onClick={() => this.sub_menu()} className="dropdown-toggle" data-toggle="dropdown">
                                                 <p>Meu Estacionamento</p>
                                             </a>
                                     </If>
-                                    <If test={this.state.parking}>
+                                    <If test={this.props.parking}>
                                         <ul className="dropdown-menu">
                                             <li><Link to={`/dashboard`}>Meu estacionamento</Link></li>
                                             
                                         </ul>
                                     </If>
-                                    <If test={!this.state.parking}>
+                                    <If test={!this.props.parking}>
                                         <Link to="/novo/estacionamento" className="dropdown-toggle" data-toggle="dropdown">
                                             <p>Novo Estacionamento</p>
                                         </Link>
@@ -119,6 +119,6 @@ class Nav extends Component{
     }
 } 
 
-const mapStateToProps = state => ({user: state.auth})
+const mapStateToProps = state => ({user: state.auth, parking: state.parking})
 const mapDispatchToProps = dispatch => bindActionCreators({logout}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(Nav)

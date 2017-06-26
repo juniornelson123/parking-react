@@ -16,7 +16,7 @@ export default (state = INITIAL_VALUE, action ) => {
 				return { ...state, validToken: false, user: null}
 			}
 		case 'USER_FETCHED':
-		console.log(action.payload)
+		console.log(action.payload.parking)
 			localStorage.setItem(userKey, JSON.stringify(action.payload))
 			localStorage.setItem(parkingKey, JSON.stringify(action.payload.parking))
 			return { ...state, user: action.payload, validToken: true}	
