@@ -1,3 +1,4 @@
+import { routerReducer} from 'react-router-redux'
 import { combineReducers } from 'redux'
 import { reducer as formReducer } from 'redux-form'
 import { reducer as toastrReducer } from 'react-redux-toastr'
@@ -10,6 +11,7 @@ const rootReducers = combineReducers({
 	toastr: toastrReducer,
 	maps: mapsReducer,
 	auth: authReducer,
+	routing: routerReducer,
 	parking: parkingReducer
 }) 
 

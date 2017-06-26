@@ -18,8 +18,10 @@ class Landpage extends Component{
 
 	constructor(props) {
 	  super(props);
-	
-	  this.state =  {center: {lat: 59.95, lng: 30.33}, zoom: 11};
+	  console.log(
+		this.props.history
+	  )
+	  this.state =  {center: {lat: 59.95, lng: 30.33}, zoom: 11};	
 	}
 	
 
