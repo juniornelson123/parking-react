@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 class BoxInfo extends Component{
 	render(){
 		return(
-			<div className="col-md-3 col-sm-3" style={{ position: 'absolute',top:100,left:0}}>
+			<div className="col-md-4 col-sm-4 col-xs-6" style={{ position: 'absolute',top:0,left:0}}>
 		      <div className="card card-signup">
 					<form className="form" method="" action="">
 						<div className="header header-primary text-center">

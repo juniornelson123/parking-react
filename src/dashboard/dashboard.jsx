@@ -1,7 +1,16 @@
 
-import React from 'react'
+import React, {Component} from 'react'
+import Content from '../common/template/contentDashboard'
 
-export default props => (
-	<div className="dashboard-container">
-	</div>
-)
+class Dashboard extends Component{
+	render(){
+		return(
+			<div className="wrapper">
+				<Content />	
+
+			</div>
+		)
+	}
+}
+
+export default Dashboard

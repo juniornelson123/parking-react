@@ -34,7 +34,6 @@ class Landpage extends Component{
 					 </div>	  
 				</Header>
 				
-				<Footer />
 			</div>
 		)
 	}

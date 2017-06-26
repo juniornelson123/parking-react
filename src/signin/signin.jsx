@@ -19,9 +19,8 @@ class Signin extends Component{
 
 			    	<div className="section text-center section-landing">
 						<div className="row">
-							<div className="col-md-4 col-md-offset-4 col-sm-12">
+							<div className="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
 								<div className="card card-signup">
-									<form className="form" method="" action="">
 										<div className="header header-primary text-center">
 											<h4>Entrar</h4>
 											<div className="social-line">
@@ -41,7 +40,6 @@ class Signin extends Component{
 											<Form onSubmit={this.props.login}/>
 										</div>
 										
-									</form>
 								</div>
 							</div>
 						</div>	

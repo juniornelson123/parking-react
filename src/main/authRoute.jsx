@@ -4,9 +4,14 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 class AuthRoute extends Component {
+  constructor(props) {
+    super(props);
+  
+    this.state = {};
+  
+  }
   render(){
-  		console.log(this.props.user.user)
-	  if (this.props.user.user) {
+  	if (this.props.user.user) {
 	  	if(this.props.path == '/sign_in' || this.props.path == '/sign_up'){
   			return <Redirect to="/home" />
 
@@ -14,9 +19,9 @@ class AuthRoute extends Component {
   		return <Route path={this.props.path} component={this.props.component} />;
 	  } else {
 		if(this.props.path == '/sign_in' || this.props.path == '/sign_up'){
-  			return <Route path={this.props.path} component={this.props.component} />
-  		}  		
-	    return <Redirect to="/sign_in" />
+  		return <Route path={this.props.path} component={this.props.component} />
+  	}  		
+    return <Redirect to="/sign_in" />
 
 	  }
   }

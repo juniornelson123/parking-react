@@ -9,15 +9,40 @@ import If from '../common/operator/if'
 class Nav extends Component{
    constructor(props) {
      super(props);
-   
-     this.state = {open: false};
+    
+    this.state = {open: false, sub_menu: false, parking: false};
+    $('html').removeClass('nav-open')
+
    }
+
+   componentWillMount(){
+        if (this.props.user.user) {
+            if (this.props.user.user.parking) {
+                this.setState({...this.state, parking: this.props.user.user.parking})
+            }  
+        }
+
+   }
+
+   sub_menu(){
+        if (this.state.sub_menu) {
+            $('#menu-sub').removeClass('open')
+            this.setState({...this.state, sub_menu: false})
+        }else{
+            this.setState({...this.state, sub_menu: true})
+            
+            $('#menu-sub').addClass('open')
+        }
+   }
+
     open(){
         if (this.state.open) {
             $('#example-navbar-primary').removeClass('in')
+            $('#example-navbar-primary').addClass('navbar-collapse')
             this.setState({...this.state, open: false})
         }else{
             this.setState({...this.state, open: true})
+            $('#example-navbar-primary').removeClass('navbar-collapse')
             
             $('#example-navbar-primary').addClass('in')
         }
@@ -63,6 +88,28 @@ class Nav extends Component{
                                         Logout
                                     </a>
                                 </li>
+                            </If>
+                            <If test={this.props.user.user}>
+                                <li className="dropdown" id="menu-sub">
+                                    <If test={this.state.parking}>
+                                            <a onClick={() => this.sub_menu()} className="dropdown-toggle" data-toggle="dropdown">
+                                                <p>Meu Estacionamento</p>
+                                            </a>
+                                    </If>
+                                    <If test={this.state.parking}>
+                                        <ul className="dropdown-menu">
+                                            <li><Link to={`/dashboard`}>Meu estacionamento</Link></li>
+                                            
+                                        </ul>
+                                    </If>
+                                    <If test={!this.state.parking}>
+                                        <Link to="/novo/estacionamento" className="dropdown-toggle" data-toggle="dropdown">
+                                            <p>Novo Estacionamento</p>
+                                        </Link>
+                                     
+                                    </If>
+                                </li>
+                                
                             </If>
                         </ul>
                     </div>

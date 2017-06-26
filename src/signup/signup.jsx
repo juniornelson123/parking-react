@@ -20,25 +20,23 @@ class Signup extends Component{
 						<div className="row">
 							<div className="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
 								<div className="card card-signup">
-									<form className="form" method="" action="">
-										<div className="header header-primary text-center">
-											<h4>Cadastrar</h4>
-											<div className="social-line">
-												<a href="#pablo" className="btn btn-simple btn-just-icon">
-													<i className="fa fa-facebook-square"></i>
-												</a>
-												<a href="#pablo" className="btn btn-simple btn-just-icon">
-													<i className="fa fa-twitter"></i>
-												</a>
-												<a href="#pablo" className="btn btn-simple btn-just-icon">
-													<i className="fa fa-google-plus"></i>
-												</a>
-											</div>
+									<div className="header header-primary text-center">
+										<h4>Cadastrar</h4>
+										<div className="social-line">
+											<a href="#pablo" className="btn btn-simple btn-just-icon">
+												<i className="fa fa-facebook-square"></i>
+											</a>
+											<a href="#pablo" className="btn btn-simple btn-just-icon">
+												<i className="fa fa-twitter"></i>
+											</a>
+											<a href="#pablo" className="btn btn-simple btn-just-icon">
+												<i className="fa fa-google-plus"></i>
+											</a>
 										</div>
-										<div className="content">
-											<Form onSubmit={this.props.signup} />
-										</div>
-									</form>
+									</div>
+									<div className="content">
+										<Form onSubmit={this.props.signup} />
+									</div>
 								</div>
 							</div>
 						
